@@ -34,6 +34,24 @@
                 Upload
             </button>
         </form>
+
+        <h2>Data Gallery</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <td>Gambar</td>
+                    <td>Caption</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($foto as $item)
+                    <tr>
+                        <td><img width="150px" src="{{ url('/uploads/'.$item->gambar) }}"></td>
+                        <td>{{ $item->caption }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
